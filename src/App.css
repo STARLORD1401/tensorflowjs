@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+.Tensor-module {
+  height: 60vh;
+  width: 80vw;
+  border: 7px solid #61dafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 30px;
+  flex-direction: column;
+  font-weight: bold;
+  color: #61dafb;
+}
+.Tensor-input {
+  background-color: #52565c;
+  font-size: 20px;
+  padding-left: 20px;
+  border: none;
+  color: #61dafb;
+  border-radius: 20px;
+  font-weight: bold;
+  height: 7vh;
+}
+.Tensor-btn {
+  height: 7vh;
+  background-color: #282c34;
+  border: 2px #61dafb solid;
+  border-radius: 20px;
+  width: 6vw;
+  font-size: 17px;
+  color: #61dafb;
+  display: flex;
+  align-items: center;
+  margin-left: 2vw;
+  justify-content: center;
+}
+.Tensor-input:focus,
+.Tensor-input:hover {
+  border: 2px solid #61dafb;
+  outline: none;
+}
+.Tensor-btn:focus,
+.Tensor-btn:hover {
+  background-color: #61dafb;
+  color: #282c34;
+  outline: none;
+}
+.Input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Prediction-box {
+  color: #61dafb;
+  margin-top: 5vh;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
+.Tensor-canvas {
+  height: 256px;
+  width: 256px;
+}
