@@ -5,27 +5,32 @@ function TensorTest() {
   const canvasRef = useRef(null);
   const loadTestModel = async () => {
     const model = await tf.loadGraphModel(
-      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/tfjs_model/model.json"
+      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/reg_tfjs/model.json"
     );
+    console.log("model: ", model);
+
+    const prediction = model.predict(tf.tensor2d([0.3, 0.2, 0.5], [1, 3]));
+    console.log("prediction: ", prediction.dataSync());
+
     // Get content image
-    let image = new Image(256, 256);
-    image.src = exampleImage;
+    // let image = new Image(256, 256);
+    // image.src = exampleImage;
 
-    // Convert image to tensor and add batch dimension
-    let tfTensor = tf.browser.fromPixels(image);
-    tfTensor = tfTensor.div(255.0);
-    tfTensor = tfTensor.expandDims(0);
-    tfTensor = tfTensor.cast("float32");
+    // // Convert image to tensor and add batch dimension
+    // let tfTensor = tf.browser.fromPixels(image);
+    // tfTensor = tfTensor.div(255.0);
+    // tfTensor = tfTensor.expandDims(0);
+    // tfTensor = tfTensor.cast("float32");
 
-    const pred = model.predict(tfTensor);
-    // Convert tensor to image
-    let outputTensor = pred.squeeze();
+    // const pred = model.predict(tfTensor);
+    // // Convert tensor to image
+    // let outputTensor = pred.squeeze();
 
-    // Scale to range [0,1] from [-1,1]
-    outputTensor = outputTensor.mul(0.5);
-    outputTensor = outputTensor.add(0.5);
-    console.log(outputTensor.dataSync());
-    await tf.browser.toPixels(outputTensor, canvasRef.current);
+    // // Scale to range [0,1] from [-1,1]
+    // outputTensor = outputTensor.mul(0.5);
+    // outputTensor = outputTensor.add(0.5);
+    // console.log(outputTensor.dataSync());
+    // await tf.browser.toPixels(outputTensor, canvasRef.current);
   };
   useEffect(() => {
     loadTestModel();
