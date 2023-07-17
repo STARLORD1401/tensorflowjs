@@ -52,18 +52,18 @@
 .Tensor-input {
   background-color: #52565c;
   font-size: 20px;
-  margin: 2vh;
+  margin: 1vh;
   padding-left: 20px;
   border: none;
   color: #61dafb;
   border-radius: 20px;
   font-weight: bold;
-  height: 7vh;
-  width: 30vw;
+  height: 5vh;
+  width: 25vw;
 }
 .Tensor-btn {
   height: 7vh;
-  margin: 2vh;
+  margin: 1vh;
   background-color: #282c34;
   border: 2px #61dafb solid;
   border-radius: 20px;
@@ -88,7 +88,7 @@
 }
 .Input-box {
   display: flex;
-  margin: 2vh;
+  margin: 3vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -109,16 +109,16 @@ input::-webkit-inner-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 7vh;
+  height: 5vh;
   background-color: #282c34;
   border: 2px #61dafb solid;
   border-radius: 20px;
-  width: 31vw;
+  width: 25vw;
 }
 .Tensor-selection-button {
-  height: 7vh;
+  height: 5vh;
   border: none;
-  width: 15.5vw;
+  width: 12.5vw;
 }
 .Tensor-selection-button:first-child {
   border-radius: 20px 0px 0px 20px;
