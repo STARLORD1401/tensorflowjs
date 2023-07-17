@@ -158,8 +158,19 @@ input::-webkit-inner-spin-button {
   display: flex;
   width: 30vw;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   color: #61dafb;
   font-size: 25px;
   font-weight: bold;
+}
+.Tensor-webcam-module {
+  display: flex;
+  margin-top: 2vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 480px;
+  width: 640;
+  background-color: aqua;
+  border-radius: 20px;
 }

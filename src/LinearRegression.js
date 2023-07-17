@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import "./App.css";
 function LinearRegression() {
   const [input, setInput] = useState(0);
   const [prediction, setPrediction] = useState(0);
@@ -23,6 +24,9 @@ function LinearRegression() {
   return (
     <div className="Tensor-module">
       <div className="Input-box">
+        <div className="Tensor-module-title">
+          Linear Regression Multiplier x 2
+        </div>
         <input
           className="Tensor-input"
           type="number"

@@ -1,12 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
-import exampleImage from "./assets/images/img_1.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
-function TensorTest() {
+function LogisticRegression() {
   const [input, setInput] = useState({ age: 0, affordability: 1 });
   const [prediction, setPrediction] = useState("");
-  const canvasRef = useRef(null);
   const loadTestModel = async () => {
     const model = await tf.loadGraphModel(
       "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/logistic_reg_model/model.json"
@@ -15,30 +13,8 @@ function TensorTest() {
       tf.tensor2d([input.age / 100, input.affordability], [1, 2])
     );
     setPrediction(prediction.dataSync()[0] >= 0.5 ? "Yes" : "No");
-
-    // Get content image
-    // let image = new Image(256, 256);
-    // image.src = exampleImage;
-
-    // // Convert image to tensor and add batch dimension
-    // let tfTensor = tf.browser.fromPixels(image);
-    // tfTensor = tfTensor.div(255.0);
-    // tfTensor = tfTensor.expandDims(0);
-    // tfTensor = tfTensor.cast("float32");
-
-    // const pred = model.predict(tfTensor);
-    // // Convert tensor to image
-    // let outputTensor = pred.squeeze();
-
-    // // Scale to range [0,1] from [-1,1]
-    // outputTensor = outputTensor.mul(0.5);
-    // outputTensor = outputTensor.add(0.5);
-    // console.log(outputTensor.dataSync());
-    // await tf.browser.toPixels(outputTensor, canvasRef.current);
   };
-  useEffect(() => {
-    // run();
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className="Tensor-module">
       <div className="Tensor-module-title">
@@ -92,4 +68,4 @@ function TensorTest() {
   );
 }
 
-export default TensorTest;
+export default LogisticRegression;
