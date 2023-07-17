@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-// import FacialLandmarkDetection from "./FacialLandmarkDetection";
-// import LinearRegression from "./LinearRegression";
+import FacialLandmarkDetection from "./FacialLandmarkDetection";
+import LinearRegression from "./LinearRegression";
 import TensorTest from "./TensorTest";
 function App() {
   return (

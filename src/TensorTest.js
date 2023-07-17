@@ -1,16 +1,20 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import exampleImage from "./assets/images/img_1.jpg";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+
 function TensorTest() {
+  const [input, setInput] = useState({ age: 0, affordability: 1 });
+  const [prediction, setPrediction] = useState("");
   const canvasRef = useRef(null);
   const loadTestModel = async () => {
     const model = await tf.loadGraphModel(
-      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/reg_tfjs/model.json"
+      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/logistic_reg_model/model.json"
     );
-    console.log("model: ", model);
-
-    const prediction = model.predict(tf.tensor2d([0.3, 0.2, 0.5], [1, 3]));
-    console.log("prediction: ", prediction.dataSync());
+    const prediction = model.predict(
+      tf.tensor2d([input.age / 100, input.affordability], [1, 2])
+    );
+    setPrediction(prediction.dataSync()[0] >= 0.5 ? "Yes" : "No");
 
     // Get content image
     // let image = new Image(256, 256);
@@ -33,12 +37,57 @@ function TensorTest() {
     // await tf.browser.toPixels(outputTensor, canvasRef.current);
   };
   useEffect(() => {
-    loadTestModel();
     // run();
   }, []);
   return (
     <div className="Tensor-module">
-      <canvas className="Tensor-canvas" ref={canvasRef}></canvas>
+      <div className="Tensor-module-title">
+        Will the person buy the insurance?
+      </div>
+      <div className="Input-box">
+        <div className="Tensor-input-label">Age:</div>
+        <input
+          className="Tensor-input"
+          type="number"
+          value={input.age}
+          onChange={(e) => {
+            setInput({ ...input, age: e.target.value });
+          }}
+        />
+        <div className="Tensor-input-label">Affordability:</div>
+        <div className="Tensor-input-selector">
+          <button
+            onClick={(e) => {
+              setInput({ ...input, affordability: 1 });
+            }}
+            className={`Tensor-selection-button ${
+              input.affordability === 1 ? "Active" : "Inactive"
+            }`}
+          >
+            Yes
+          </button>
+          <button
+            onClick={(e) => {
+              setInput({ ...input, affordability: 0 });
+            }}
+            className={`Tensor-selection-button ${
+              input.affordability === 0 ? "Active" : "Inactive"
+            }`}
+          >
+            No
+          </button>
+        </div>
+        <button
+          className="Tensor-btn"
+          onClick={(e) => {
+            loadTestModel();
+          }}
+        >
+          <AutoAwesomeIcon />
+        </button>
+      </div>
+      <div className="Prediction-box">prediction: {prediction}</div>
+      {/* <canvas className="Tensor-canvas" ref={canvasRef}></canvas> */}
     </div>
   );
 }

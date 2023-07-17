@@ -49,7 +49,7 @@ function FacialLandmarkDetection() {
     }
   };
   return (
-    <div>
+    <div className="Tensor-module">
       <Webcam
         ref={webcamRef}
         style={{

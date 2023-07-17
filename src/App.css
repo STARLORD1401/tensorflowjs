@@ -37,7 +37,7 @@
   }
 }
 .Tensor-module {
-  height: 60vh;
+  height: 70vh;
   width: 80vw;
   border: 7px solid #61dafb;
   display: flex;
@@ -52,15 +52,18 @@
 .Tensor-input {
   background-color: #52565c;
   font-size: 20px;
+  margin: 2vh;
   padding-left: 20px;
   border: none;
   color: #61dafb;
   border-radius: 20px;
   font-weight: bold;
   height: 7vh;
+  width: 30vw;
 }
 .Tensor-btn {
   height: 7vh;
+  margin: 2vh;
   background-color: #282c34;
   border: 2px #61dafb solid;
   border-radius: 20px;
@@ -85,12 +88,13 @@
 }
 .Input-box {
   display: flex;
+  margin: 2vh;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .Prediction-box {
   color: #61dafb;
-  margin-top: 5vh;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -99,4 +103,63 @@ input::-webkit-inner-spin-button {
 .Tensor-canvas {
   height: 256px;
   width: 256px;
+}
+.Tensor-input-selector {
+  margin: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vh;
+  background-color: #282c34;
+  border: 2px #61dafb solid;
+  border-radius: 20px;
+  width: 31vw;
+}
+.Tensor-selection-button {
+  height: 7vh;
+  border: none;
+  width: 15.5vw;
+}
+.Tensor-selection-button:first-child {
+  border-radius: 20px 0px 0px 20px;
+}
+.Tensor-selection-button:nth-child(2) {
+  border-radius: 0 20px 20px 0px;
+}
+.Inactive {
+  background-color: #52565c;
+  color: #61dafb;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Active {
+  background-color: #61dafb;
+  color: #52565c;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Inactive:hover,
+.Inactive:focus {
+  background-color: #61dafb;
+  color: #52565c;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+}
+.Active:focus {
+  outline: none;
+}
+.Tensor-module-title {
+  color: #61dafb;
+  font-size: 40px;
+  font-weight: bold;
+}
+.Tensor-input-label {
+  display: flex;
+  width: 30vw;
+  align-items: center;
+  justify-content: start;
+  color: #61dafb;
+  font-size: 25px;
+  font-weight: bold;
 }
