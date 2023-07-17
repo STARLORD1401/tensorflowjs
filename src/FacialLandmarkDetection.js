@@ -3,8 +3,6 @@ import "@tensorflow/tfjs-backend-webgl";
 import * as facemesh from "@tensorflow-models/face-landmarks-detection";
 import Webcam from "react-webcam";
 import { drawMesh } from "./utilities";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import "./App.css";
 function FacialLandmarkDetection() {
   const webcamRef = useRef(null);
