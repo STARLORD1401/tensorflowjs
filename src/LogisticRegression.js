@@ -18,7 +18,7 @@ function LogisticRegression() {
   return (
     <div className="Tensor-module">
       <div className="Tensor-module-title">
-        Will the person buy the insurance?
+        Will this person buy an insurance?
       </div>
       <div className="Input-box">
         <div className="Tensor-input-label">Age:</div>

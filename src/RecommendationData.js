@@ -23,7 +23,7 @@ function RecommendationData() {
   return (
     <div className="Tensor-module">
       <div className="Tensor-module-title">
-        What is the person's area of interest?
+        What is this person's area of interest?
       </div>
       <div className="Input-box">
         <div className="Tensor-input-label">Sports %</div>
