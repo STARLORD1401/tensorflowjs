@@ -59,6 +59,7 @@ function FacialLandmarkDetection() {
             zIndex: 9,
             width: 640,
             height: 480,
+            top: 0,
             borderRadius: "20px",
           }}
         />
@@ -67,8 +68,8 @@ function FacialLandmarkDetection() {
             ref={canvasRef}
             style={{
               position: "absolute",
-              backdropFilter: "blur(5px)",
-              zIndex: 9,
+              zIndex: 10,
+              top: 0,
               width: 640,
               height: 480,
               borderRadius: "20px",

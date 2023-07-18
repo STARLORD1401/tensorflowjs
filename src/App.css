@@ -171,6 +171,5 @@ input::-webkit-inner-spin-button {
   position: relative;
   height: 480px;
   width: 640;
-  background-color: aqua;
   border-radius: 20px;
 }
