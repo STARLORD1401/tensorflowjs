@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Webcam from "react-webcam";
 import LinkIcon from "@mui/icons-material/Link";
 import { Canvas, useFrame, useGraph } from "@react-three/fiber";
-import { Color, Euler, Matrix4, SkinnedMesh } from "three";
+import { Color, Euler, Matrix4 } from "three";
 import { useGLTF } from "@react-three/drei";
 import { FaceLandmarker, FilesetResolver } from "@mediapipe/tasks-vision";
 var faceLandmarker;
@@ -16,6 +16,7 @@ function RPMFaceTracking() {
   const webcamRef = useRef(null);
   useEffect(() => {
     setup();
+    // eslint-disable-next-line
   }, [faceLandmarker]);
   const setup = async () => {
     if (webcamRef.current !== null) {
