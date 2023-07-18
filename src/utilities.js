@@ -177,8 +177,6 @@ const drawPath = (ctx, points, closePath) => {
   if (closePath) {
     region.closePath();
   }
-  ctx.fillStyle = "#fff";
-  ctx.fill(region);
   ctx.strokeStyle = "#61dafb";
   ctx.stroke(region);
 };

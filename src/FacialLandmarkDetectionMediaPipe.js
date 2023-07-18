@@ -3,20 +3,17 @@ import React, { useRef, useEffect } from "react";
 import * as Facemesh from "@mediapipe/face_mesh";
 import * as cam from "@mediapipe/camera_utils";
 import Webcam from "react-webcam";
-import { drawConnectors } from "@mediapipe/drawing_utils/drawing_utils";
+import { drawConnectors, drawRectangle } from "@mediapipe/drawing_utils";
 function FacialLandmarkDetectionMediaPipe() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-  var camera = null;
+  let video;
   function onResults(results) {
-    // const video = webcamRef.current.video;
     const videoWidth = webcamRef.current.video.videoWidth;
     const videoHeight = webcamRef.current.video.videoHeight;
-
     // Set canvas width
     canvasRef.current.width = videoWidth;
     canvasRef.current.height = videoHeight;
-
     const canvasElement = canvasRef.current;
     const canvasCtx = canvasElement.getContext("2d");
     canvasCtx.save();
@@ -30,6 +27,11 @@ function FacialLandmarkDetectionMediaPipe() {
     );
     if (results.multiFaceLandmarks) {
       for (const landmarks of results.multiFaceLandmarks) {
+        drawRectangle(canvasCtx, Facemesh.FACEMESH_FACE_OVAL, {
+          height: "300px",
+          fillColor: "#fff",
+          width: "300px",
+        });
         drawConnectors(canvasCtx, landmarks, Facemesh.FACEMESH_TESSELATION, {
           color: "#fff",
           lineWidth: 1,
@@ -43,6 +45,7 @@ function FacialLandmarkDetectionMediaPipe() {
         drawConnectors(canvasCtx, landmarks, Facemesh.FACEMESH_LEFT_EYE, {
           color: "#fff",
         });
+
         drawConnectors(canvasCtx, landmarks, Facemesh.FACEMESH_LEFT_EYEBROW, {
           color: "#fff",
         });
@@ -75,17 +78,19 @@ function FacialLandmarkDetectionMediaPipe() {
     // eslint-disable-next-line
     if (
       typeof webcamRef.current !== "undefined" &&
-      webcamRef.current !== null
+      webcamRef.current !== null &&
+      webcamRef.current.video !== null &&
+      canvasRef.current !== null
     ) {
       // eslint-disable-next-line
-      camera = new cam.Camera(webcamRef.current.video, {
+      video = new cam.Camera(webcamRef.current.video, {
         onFrame: async () => {
           await faceMesh.send({ image: webcamRef.current.video });
         },
         width: 640,
         height: 480,
       });
-      camera.start();
+      video.start();
     }
     // eslint-disable-next-line
   }, []);

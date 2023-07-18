@@ -8,6 +8,7 @@ function FacialLandmarkDetection() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
   const [webcamSwitch, setWebcamSwitch] = useState(false);
+  let video;
   useEffect(() => {
     runFaceMesh();
     console.log(canvasRef.current ? true : false);
@@ -34,7 +35,7 @@ function FacialLandmarkDetection() {
       webcamRef.current.video.readyState === 4 &&
       canvasRef.current !== null
     ) {
-      const video = webcamRef.current.video;
+      video = webcamRef.current.video;
       const videoWidth = webcamRef.current.video.videoWidth;
       const videoHeight = webcamRef.current.video.videoHeight;
       webcamRef.current.video.width = videoWidth;
