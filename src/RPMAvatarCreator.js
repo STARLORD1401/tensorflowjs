@@ -8,12 +8,10 @@ function RPMAvatarCreator({ setAvatarURL, setIndex }) {
     setIndex(1);
   };
   const avatarConfig = {
-    meshLod: 1,
     textureAtlas: 512,
     quality: "medium",
     morphTargets: ["ARKit"],
     pose: "A",
-    useHands: "false",
   };
   useEffect(() => {
     setAvatarURL("");
