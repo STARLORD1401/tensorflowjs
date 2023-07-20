@@ -7,6 +7,13 @@ function RPMAvatarCreator({ setAvatarURL, setIndex }) {
     setAvatarURL(url);
     setIndex(1);
   };
+  const avatarConfig = {
+    meshLod: 0,
+    textureAtlas: 1024,
+    quality: "medium",
+    morphTargets: ["ARKit"],
+    pose: "A",
+  };
   useEffect(() => {
     setAvatarURL("");
     // eslint-disable-next-line
@@ -16,6 +23,7 @@ function RPMAvatarCreator({ setAvatarURL, setIndex }) {
       <AvatarCreatorViewer
         subdomain="character-creator-cevzkt"
         onAvatarExported={handleOnAvatarExported}
+        avatarConfig={avatarConfig}
       />
     </div>
   );

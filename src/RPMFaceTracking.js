@@ -135,9 +135,7 @@ function RPMFaceTracking({ avatarURL, setIndex }) {
 export default RPMFaceTracking;
 
 function Avatar({ avatarURL }) {
-  const avatar = useGLTF(
-    `${avatarURL}?morphTargets=ARKit&textureAtlas=512&quality=low&meshLod=1`
-  );
+  const avatar = useGLTF(`${avatarURL}`);
   const { nodes } = useGraph(avatar.scene);
   useEffect(() => {
     headMesh = nodes.Wolf3D_Avatar;
