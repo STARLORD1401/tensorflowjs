@@ -163,6 +163,6 @@ function Avatar({ avatarURL }) {
   });
 
   return (
-    <primitive object={avatar.scene} position={[0, -1.67, 0.4]}></primitive>
+    <primitive object={avatar.scene} position={[0, -1.67, 4.4]}></primitive>
   );
 }
