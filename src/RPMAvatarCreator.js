@@ -9,7 +9,6 @@ function RPMAvatarCreator({ setAvatarURL, setIndex }) {
   };
   const avatarConfig = {
     textureAtlas: 512,
-    quality: "medium",
     morphTargets: ["ARKit"],
     pose: "A",
   };
