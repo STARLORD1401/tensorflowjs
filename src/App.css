@@ -16,6 +16,10 @@
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
