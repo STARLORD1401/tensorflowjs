@@ -105,9 +105,9 @@ function RPMFaceTracking({ avatarURL, setIndex }) {
         <Canvas
           style={{
             position: "absolute",
+            backgroundImage: "linear-gradient(#c561fb, #61dafb)",
             height: "70vh",
             width: "80vw",
-            backgroundColor: "black",
             borderRadius: "20px",
           }}
           camera={{
@@ -117,7 +117,7 @@ function RPMFaceTracking({ avatarURL, setIndex }) {
           <ambientLight intensity={0.5} />
           <pointLight
             position={[1, 1, 1]}
-            color={new Color(1, 1, 0)}
+            color={new Color(0.38, 0.85, 1)}
             intensity={0.5}
           />
           <pointLight
@@ -135,7 +135,9 @@ function RPMFaceTracking({ avatarURL, setIndex }) {
 export default RPMFaceTracking;
 
 function Avatar({ avatarURL }) {
-  const avatar = useGLTF(`${avatarURL}?morphTargets=ARKit&textureAtlas=1024`);
+  const avatar = useGLTF(
+    `${avatarURL}?morphTargets=ARKit&textureAtlas=512&quality=low&meshLod=1`
+  );
   const { nodes } = useGraph(avatar.scene);
   useEffect(() => {
     headMesh = nodes.Wolf3D_Avatar;
@@ -163,6 +165,6 @@ function Avatar({ avatarURL }) {
   });
 
   return (
-    <primitive object={avatar.scene} position={[0, -1.65, 4.0]}></primitive>
+    <primitive object={avatar.scene} position={[0, -1.67, 4.4]}></primitive>
   );
 }
