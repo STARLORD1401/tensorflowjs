@@ -7,7 +7,7 @@ function LogisticRegression() {
   const [prediction, setPrediction] = useState("");
   const loadTestModel = async () => {
     const model = await tf.loadGraphModel(
-      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/logistic_reg_model/model.json"
+      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/models/logistic_reg_model/model.json"
     );
     const prediction = model.predict(
       tf.tensor2d([input.age / 100, input.affordability], [1, 2])

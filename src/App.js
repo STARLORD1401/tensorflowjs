@@ -7,10 +7,11 @@ import LogisticRegression from "./LogisticRegression";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import FacialLandmarkDetectionMediaPipe from "./FacialLandmarkDetectionMediaPipe";
-import RPMFaceTracking from "./RPMFaceTracking";
+
+import RPMHandler from "./RPMHandler";
 function App() {
   const tfModules = [
-    <RPMFaceTracking />,
+    <RPMHandler />,
     <FacialLandmarkDetectionMediaPipe />,
     <FacialLandmarkDetection />,
     <LinearRegression />,

@@ -13,6 +13,7 @@
     "@mui/material": "^5.14.0",
     "@react-three/drei": "^9.78.2",
     "@react-three/fiber": "^8.13.5",
+    "@readyplayerme/rpm-react-sdk": "^0.1.4",
     "@tensorflow-models/face-landmarks-detection": "^1.0.2",
     "@tensorflow-models/pose-detection": "^2.1.0",
     "@tensorflow/tfjs": "^4.8.0",

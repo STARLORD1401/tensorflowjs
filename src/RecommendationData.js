@@ -7,7 +7,7 @@ function RecommendationData() {
   const [prediction, setPrediction] = useState("");
   const loadModel = async () => {
     const model = await tf.loadGraphModel(
-      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/recommendation_data_model/model.json"
+      "https://raw.githubusercontent.com/STARLORD1401/tensorflowjs/main/src/models/recommendation_data_model/model.json"
     );
     let pred = model.predict(
       tf.tensor2d(
