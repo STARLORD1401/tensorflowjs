@@ -14,7 +14,6 @@ function RPMAvatarCreator({ setAvatarURL, setIndex }) {
     morphTargets: ["ARKit"],
     pose: "A",
     useHands: "false",
-    useDracoCompression: "true",
   };
   useEffect(() => {
     setAvatarURL("");
